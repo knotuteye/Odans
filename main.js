@@ -37,14 +37,24 @@
         if (e.matches) setMenu(false);
     });
 
-    /* Hero video: slow it down, and don't play it for reduced-motion users */
+    /* Hero video: slow it down. If the browser won't autoplay it (iPhone Low
+       Power Mode, data saver) or the visitor prefers reduced motion, hide the
+       video and let the still frame behind it show instead. */
     var video = document.querySelector(".hero-media video");
     if (video) {
+        var useStill = function () {
+            video.pause();
+            video.parentElement.classList.add("no-video");
+        };
         if (reduceMotion) {
             video.removeAttribute("autoplay");
-            video.pause();
+            useStill();
         } else {
+            video.muted = true; // iOS checks the property, not just the attribute
+            video.defaultPlaybackRate = 0.6;
             video.playbackRate = 0.6;
+            var attempt = video.play();
+            if (attempt && typeof attempt.catch === "function") attempt.catch(useStill);
         }
     }
 

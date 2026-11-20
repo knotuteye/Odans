@@ -498,10 +498,27 @@ ul[role="list"] {
 
 .hero-media {
     z-index: -2;
+    /* Still frame shown while the video loads, or instead of it when the
+       browser blocks autoplay (e.g. iPhone Low Power Mode) */
+    background: url("img/photos/city-poster.jpg") center / cover no-repeat;
 }
 
 .hero-media video {
     object-fit: cover;
+    pointer-events: none;
+}
+
+.hero-media.no-video video {
+    display: none;
+}
+
+/* Never show Safari's native play button over the background video */
+.hero-media video::-webkit-media-controls,
+.hero-media video::-webkit-media-controls-panel,
+.hero-media video::-webkit-media-controls-overlay-play-button,
+.hero-media video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
 }
 
 .hero-overlay {
