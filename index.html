@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" href="img/brand/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Poppins:wght@400;500;600&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -70,7 +70,7 @@
     </header>
 
     <main id="main">
-        <section class="hero">
+        <section class="hero" aria-labelledby="hero-title">
             <div class="hero-media" aria-hidden="true">
                 <!-- Source is attached by main.js on screens 720px+ only, so phones never download the video -->
                 <video muted loop playsinline preload="none" poster="img/photos/city-poster.jpg">
@@ -78,21 +78,27 @@
                 </video>
             </div>
             <div class="hero-overlay" aria-hidden="true"></div>
-            <div class="container">
+            <div class="container container--wide">
                 <div class="hero-content">
                     <span class="eyebrow">Engineering &middot; Construction &middot; Maintenance</span>
-                    <h1><span class="accent">Dream</span> it,<br>we <span class="accent">build</span> it.</h1>
-                    <p class="hero-lead">Over 9 years of trusted expertise in engineering, construction and maintenance for oil, private and government clients across Ghana and West Africa.</p>
-                    <div class="btn-row">
-                        <a class="btn btn--primary" href="contact.html">Get a quote <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                        <a class="btn btn--outline" href="services.html">Explore our services</a>
+                    <h1 class="hero-title" id="hero-title" data-split><span class="line outline">Dream it,</span> <span class="line">we <span class="accent">build</span> it.</span></h1>
+                    <div class="hero-foot">
+                        <div>
+                            <p class="hero-lead">Over 9 years of trusted expertise in engineering, construction and maintenance for oil, private and government clients across Ghana and West Africa.</p>
+                            <div class="btn-row">
+                                <a class="btn btn--primary" href="contact.html">Get a quote <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                                <a class="btn btn--outline" href="services.html">Explore our services</a>
+                            </div>
+                        </div>
+                        <dl class="title-block" aria-label="Project summary">
+                            <div class="tb-wide"><dt>Project</dt><dd>Your next build</dd></div>
+                            <div class="tb-wide"><dt>Scope</dt><dd>Design &middot; Construction &middot; Steel &middot; Maintenance</dd></div>
+                            <div><dt>Experience</dt><dd>9+ years</dd></div>
+                            <div><dt>Region</dt><dd>Ghana &amp; West Africa</dd></div>
+                            <div><dt>Drawing no.</dt><dd>ODN-A-000</dd></div>
+                            <div><dt>Scale</dt><dd>1 : 1</dd></div>
+                        </dl>
                     </div>
-                    <ul class="hero-badges" role="list">
-                        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Fuel station specialists</li>
-                        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Structural steel fabrication</li>
-                        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Skilled in-house technical team</li>
-                    </ul>
-
                     <!-- Phone-only hero extras (hidden from 720px up) -->
                     <div class="hero-mobile">
                         <figure class="hero-photo">
@@ -116,17 +122,22 @@
             </div>
         </section>
 
-        <section class="section" aria-labelledby="about-title">
-            <div class="container split">
-                <div class="photo-frame photo-frame--cutout reveal">
-                    <img src="img/photos/founders.png" alt="Two members of the Odans team in branded hard hats and safety vests" width="408" height="612" loading="lazy">
-                    <div class="photo-badge"><strong>9+</strong><span>Years building<br>in Ghana</span></div>
-                </div>
-                <div class="reveal">
-                    <span class="eyebrow">Who we are</span>
+        <section class="section intro" aria-labelledby="about-title">
+            <div class="container container--wide intro-grid">
+                <div class="intro-head reveal">
+                    <span class="eyebrow"><span class="sheet">A-101</span>Who we are</span>
                     <h2 id="about-title">Building excellence, defined.</h2>
-                    <p class="mt-lg">We are a Ghanaian-based construction company with a prominent presence in the West African region. Through our unique synergy, we provide top-quality services across the broad infrastructure and engineering industry.</p>
-                    <p>From the first sketch to the finishing touches, we manage every detail of your project with a focus on safety, quality and value for money.</p>
+                </div>
+                <p class="intro-statement" data-scrub>We are a Ghanaian construction company with a prominent presence across West Africa. From the first sketch to the finishing touches, we manage every detail of your project with a focus on safety, quality and value for money.</p>
+                <figure class="intro-figure reveal">
+                    <div class="cutout">
+                        <img src="img/photos/founders.png" alt="Two members of the Odans team in branded hard hats and safety vests" width="408" height="612" loading="lazy">
+                    </div>
+                    <figcaption class="fig-cap"><span>Fig. 01</span> The Odans team, on site</figcaption>
+                    <div class="photo-badge" aria-hidden="true"><strong>9+</strong><span>Years building<br>in Ghana</span></div>
+                </figure>
+                <div class="intro-body reveal">
+                    <p>Through our unique synergy, we provide top-quality services across the broad infrastructure and engineering industry, for oil marketing companies, private developers and government.</p>
                     <ul class="check-list check-list--cols" role="list">
                         <li>Design, build &amp; remodelling</li>
                         <li>Fuel station construction</li>
@@ -138,141 +149,203 @@
             </div>
         </section>
 
-        <section class="section section--soft services-band" aria-labelledby="services-title">
-            <div class="container">
-                <div class="section-head section-head--center reveal">
-                    <span class="eyebrow">What we do</span>
-                    <h2 id="services-title">Our services</h2>
-                    <p>Four specialist service lines, delivered by one dependable team.</p>
-                </div>
-                <div class="grid grid--4">
-                    <a class="card service-card reveal" href="services.html#general-construction">
-                        <div class="card-media"><img src="img/photos/townhouse.jpg" alt="Modern two-storey townhouse with a timber-clad facade" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>General Construction</h3>
-                            <p>Design, building and remodelling of residential and commercial projects, delivered efficiently and reliably.</p>
-                            <span class="text-link">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        <section class="build" aria-labelledby="build-title">
+            <div class="build-track">
+                <div class="build-sticky">
+                    <div class="container container--wide build-inner">
+                        <div class="build-copy">
+                            <span class="eyebrow"><span class="sheet">S-201</span>From drawing to delivery</span>
+                            <h2 id="build-title">Every build starts as a drawing.</h2>
+                            <ol class="build-steps" role="list">
+                                <li class="is-active"><span class="num">01</span><h3>Design</h3><p>We plan the site, the structure and the services before ground is broken.</p></li>
+                                <li><span class="num">02</span><h3>Build</h3><p>Our in-house team fabricates, builds and installs every element.</p></li>
+                                <li><span class="num">03</span><h3>Deliver</h3><p>Handed over complete, safe and ready for business.</p></li>
+                            </ol>
                         </div>
-                    </a>
-                    <a class="card service-card reveal" href="services.html#fuel-stations">
-                        <div class="card-media"><img src="img/photos/fuel-station.jpg" alt="Completed Africa Petroleum fuel station with canopy and pumps" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>Fuel Station Construction</h3>
-                            <p>From undeveloped land to a fully equipped station: forecourt, mart, canopy, tanks and piping.</p>
-                            <span class="text-link">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-                        </div>
-                    </a>
-                    <a class="card service-card reveal" href="services.html#steel-works">
-                        <div class="card-media"><img src="img/photos/steel-structure.jpg" alt="Worker installing roof beams on a structural steel frame" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>Structural Steel Works</h3>
-                            <p>Detailing, fabrication and installation of warehouses, portal frames, container units, gates and doors.</p>
-                            <span class="text-link">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-                        </div>
-                    </a>
-                    <a class="card service-card reveal" href="services.html#facility-management">
-                        <div class="card-media"><img src="img/photos/team-on-site.jpg" alt="Odans team in safety vests and hard hats at a fuel station" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>Facility Management</h3>
-                            <p>Preventive and reactive maintenance that keeps your buildings safe, functional and lasting longer.</p>
-                            <span class="text-link">Learn more <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-                        </div>
-                    </a>
-                </div>
-                <div class="section-foot reveal">
-                    <a class="btn btn--light" href="services.html">View all services <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                        <figure class="build-stage">
+                            <div class="build-frame">
+                                <img src="img/photos/fuel-station.jpg" alt="The completed Africa Petroleum fuel station built by Odans, with its canopy, pumps and price sign" width="1600" height="1066" loading="lazy">
+                                <svg class="build-drawing" viewBox="0 0 1600 1066" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                                <g style="--d:0.0">
+                                <path pathLength="1" d="M0 905H1600"/>
+                                <path pathLength="1" d="M0 875H710V895H0"/>
+                                <path pathLength="1" d="M710 880H800V908H712"/>
+                                <path pathLength="1" d="M800 860H1600"/>
+                                <path pathLength="1" d="M0 798L490 794M0 862H700"/>
+                                </g>
+                                <g style="--d:0.1">
+                                <path pathLength="1" d="M205 330L332 347L328 675L195 665Z"/>
+                                <path pathLength="1" d="M213 552C250 505 290 468 331 452"/>
+                                <path pathLength="1" d="M268 528H315V555H268ZM268 563H315V590H268Z"/>
+                                <path pathLength="1" d="M302 675V868M316 676V868"/>
+                                <path pathLength="1" d="M236 395a24 24 0 1 0 48 0a24 24 0 1 0-48 0M296 372V450"/>
+                                </g>
+                                <g style="--d:0.2">
+                                <path pathLength="1" d="M429 455V860M435 455V860"/>
+                                <path pathLength="1" d="M432 452L408 418M432 448L495 392"/>
+                                <path pathLength="1" d="M396 410l24 10M486 386l14-2l-6 12"/>
+                                </g>
+                                <g style="--d:0.3">
+                                <path pathLength="1" d="M868 503L1340 448L1600 520"/>
+                                <path pathLength="1" d="M868 503V555L1340 505L1600 572"/>
+                                <path pathLength="1" d="M868 528L1340 476L1600 545"/>
+                                <path pathLength="1" d="M900 556L1600 648"/>
+                                <path pathLength="1" d="M1338 462H1380V520H1338Z"/>
+                                </g>
+                                <g style="--d:0.4">
+                                <path pathLength="1" d="M1076 552V850M1094 551V850"/>
+                                <path pathLength="1" d="M1226 528V856M1248 530V856"/>
+                                <path pathLength="1" d="M1317 600V842M1332 602V842"/>
+                                <path pathLength="1" d="M1453 610V836M1471 612V836"/>
+                                <path pathLength="1" d="M1482 622V828M1498 624V828"/>
+                                </g>
+                                <g style="--d:0.5">
+                                <path pathLength="1" d="M800 626H910V652H800Z"/>
+                                <path pathLength="1" d="M898 598H955V852H898"/>
+                                <path pathLength="1" d="M1016 645V840"/>
+                                </g>
+                                <g style="--d:0.6">
+                                <path pathLength="1" d="M808 692H872V855H808Z"/>
+                                <path pathLength="1" d="M1130 716H1198V842H1130Z"/>
+                                <path pathLength="1" d="M1368 718H1422V832H1368Z"/>
+                                <path pathLength="1" d="M1518 725H1574V828H1518Z"/>
+                                <path pathLength="1" d="M1092 640H1176V702H1092ZM1328 660H1406V715H1328ZM1496 675H1562V722H1496Z"/>
+                                <path pathLength="1" d="M1200 705L1600 690"/>
+                                </g>
+                                </svg>
+                                <svg class="build-dims" viewBox="0 0 1600 1066" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                                    <path pathLength="1" d="M868 405H1596M868 388V422M1596 388V422"/>
+                                    <path pathLength="1" d="M168 330V868M150 330H186M150 868H186"/>
+                                </svg>
+                                <span class="build-scan" aria-hidden="true"></span>
+                                <ul class="build-labels" role="list" aria-hidden="true">
+                                    <li style="--x:77%;--y:34.5%">Canopy</li>
+                                    <li style="--x:10.5%;--y:28%">Price pylon</li>
+                                    <li style="--x:72.75%;--y:64%">Pump island</li>
+                                    <li style="--x:62%;--y:83.5%">Forecourt</li>
+                                </ul>
+                            </div>
+                            <figcaption class="build-caption"><span><b>Africa Petroleum service station</b> &middot; Fuel station construction</span><span>Progress <b data-progress>100</b>%</span></figcaption>
+                        </figure>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section" aria-labelledby="why-title">
-            <div class="container">
+        <section class="section services-index" aria-labelledby="services-title">
+            <div class="container container--wide">
+                <div class="head-row">
+                    <div class="reveal">
+                        <span class="eyebrow"><span class="sheet">S-301</span>What we do</span>
+                        <h2 id="services-title" data-split>Four specialist service lines.</h2>
+                        <p>Delivered by one dependable team, from undeveloped land to long-term maintenance.</p>
+                    </div>
+                    <a class="text-link reveal" href="services.html">View all services <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                </div>
+                <ol class="svc" role="list">
+                    <li class="reveal"><a class="svc-row" href="services.html#general-construction" data-preview="0">
+                        <span class="svc-num">01</span>
+                        <span class="svc-title">General construction</span>
+                        <span class="svc-desc">Design, building and remodelling of residential and commercial projects, delivered efficiently and reliably.</span>
+                        <span class="svc-thumb"><img src="img/photos/townhouse.jpg" alt="" loading="lazy"></span>
+                        <svg class="icon svc-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                    </a></li>
+                    <li class="reveal"><a class="svc-row" href="services.html#fuel-stations" data-preview="1">
+                        <span class="svc-num">02</span>
+                        <span class="svc-title">Fuel station construction</span>
+                        <span class="svc-desc">From undeveloped land to a fully equipped station: forecourt, mart, canopy, tanks and piping.</span>
+                        <span class="svc-thumb"><img src="img/photos/fuel-station.jpg" alt="" loading="lazy"></span>
+                        <svg class="icon svc-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                    </a></li>
+                    <li class="reveal"><a class="svc-row" href="services.html#steel-works" data-preview="2">
+                        <span class="svc-num">03</span>
+                        <span class="svc-title">Structural steel works</span>
+                        <span class="svc-desc">Detailing, fabrication and installation of warehouses, portal frames, container units, gates and doors.</span>
+                        <span class="svc-thumb"><img src="img/photos/steel-structure.jpg" alt="" loading="lazy"></span>
+                        <svg class="icon svc-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                    </a></li>
+                    <li class="reveal"><a class="svc-row" href="services.html#facility-management" data-preview="3">
+                        <span class="svc-num">04</span>
+                        <span class="svc-title">Facility management</span>
+                        <span class="svc-desc">Preventive and reactive maintenance that keeps your buildings safe, functional and lasting longer.</span>
+                        <span class="svc-thumb"><img src="img/photos/team-on-site.jpg" alt="" loading="lazy"></span>
+                        <svg class="icon svc-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                    </a></li>
+                </ol>
+            </div>
+            <div class="svc-preview" aria-hidden="true">
+                <img src="img/photos/townhouse.jpg" alt="" loading="lazy">
+                <img src="img/photos/fuel-station.jpg" alt="" loading="lazy">
+                <img src="img/photos/steel-structure.jpg" alt="" loading="lazy">
+                <img src="img/photos/team-on-site.jpg" alt="" loading="lazy">
+            </div>
+        </section>
+
+        <section class="section section--soft" aria-labelledby="why-title">
+            <div class="container container--wide">
                 <div class="section-head reveal">
-                    <span class="eyebrow">Why Odans</span>
-                    <h2 id="why-title">A construction partner you can rely on</h2>
+                    <span class="eyebrow"><span class="sheet">A-401</span>Why Odans</span>
+                    <h2 id="why-title" data-split>A construction partner you can rely on.</h2>
                     <p>Clients choose us because we are efficient, reliable and trustworthy, on every project, at every scale.</p>
                 </div>
-                <div class="grid grid--4">
-                    <div class="feature reveal">
-                        <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></div>
-                        <h3>Safety first</h3>
-                        <p>Careful site practices on every job, protecting our people, your property and the public.</p>
-                    </div>
-                    <div class="feature reveal">
-                        <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg></div>
-                        <h3>Quality workmanship</h3>
-                        <p>A skilled technical team that takes pride in getting the details right, from foundations to finishes.</p>
-                    </div>
-                    <div class="feature reveal">
-                        <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-tool"/></svg></div>
-                        <h3>Value for money</h3>
-                        <p>Competitive pricing and efficient delivery, so more of your budget goes into the build.</p>
-                    </div>
-                    <div class="feature reveal">
-                        <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></div>
-                        <h3>End-to-end service</h3>
-                        <p>One partner from initial sketch to handover, plus ongoing maintenance once you're up and running.</p>
-                    </div>
-                </div>
+                <ol class="spec" role="list">
+                    <li class="reveal"><span class="num">01</span><h3>Safety first</h3><p>Careful site practices on every job, protecting our people, your property and the public.</p></li>
+                    <li class="reveal"><span class="num">02</span><h3>Quality workmanship</h3><p>A skilled technical team that takes pride in getting the details right, from foundations to finishes.</p></li>
+                    <li class="reveal"><span class="num">03</span><h3>Value for money</h3><p>Competitive pricing and efficient delivery, so more of your budget goes into the build.</p></li>
+                    <li class="reveal"><span class="num">04</span><h3>End-to-end service</h3><p>One partner from initial sketch to handover, plus ongoing maintenance once you're up and running.</p></li>
+                </ol>
             </div>
         </section>
 
         <section class="section section--dark" aria-label="Odans in numbers">
-            <div class="container">
+            <div class="container container--wide">
+                <span class="eyebrow reveal"><span class="sheet">A-402</span>Odans in numbers</span>
                 <div class="stats">
-                    <div class="stat reveal"><strong>9<span class="accent">+</span></strong><span>Years of experience</span></div>
-                    <div class="stat reveal"><strong><span class="ph">[XX]</span><span class="accent">+</span></strong><span>Projects completed</span></div>
-                    <div class="stat reveal"><strong>4</strong><span>Core service lines</span></div>
-                    <div class="stat reveal"><strong><span class="ph">[XX]</span></strong><span>Skilled staff</span></div>
+                    <div class="stat reveal"><strong><span data-count="9">9</span><span class="accent">+</span></strong><span>Years building in Ghana</span></div>
+                    <div class="stat reveal"><strong><span data-count="4">4</span></strong><span>Specialist service lines</span></div>
+                    <div class="stat reveal"><strong><span data-count="3">3</span></strong><span>Client sectors: oil, private &amp; government</span></div>
+                    <div class="stat reveal"><strong><span data-count="9">9</span></strong><span>Leading brands on our client list</span></div>
                 </div>
             </div>
         </section>
 
         <section class="section" aria-labelledby="projects-title">
-            <div class="container">
-                <div class="section-head reveal">
-                    <span class="eyebrow">Our work</span>
-                    <h2 id="projects-title">Recent projects</h2>
-                    <p>A look at some of the fuel stations, buildings and steel structures we've delivered.</p>
+            <div class="container container--wide">
+                <div class="head-row">
+                    <div class="reveal">
+                        <span class="eyebrow"><span class="sheet">P-501</span>Our work</span>
+                        <h2 id="projects-title" data-split>Recent projects.</h2>
+                        <p>A look at some of the fuel stations, buildings and steel structures we've delivered.</p>
+                    </div>
+                    <a class="text-link reveal" href="projects.html">See all projects <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
                 </div>
-                <div class="grid grid--3">
-                    <a class="card reveal" href="projects.html">
-                        <div class="card-media"><img src="img/photos/fuel-station.jpg" alt="Africa Petroleum fuel station built by Odans" loading="lazy"></div>
-                        <div class="card-body">
-                            <span class="tag">Fuel station</span>
-                            <h3>Africa Petroleum service station</h3>
-                            <p><span class="ph">[Town, Region]</span> &middot; <span class="ph">[Year]</span></p>
-                        </div>
+                <div class="work-grid">
+                    <a class="work-item reveal reveal--clip" href="projects.html">
+                        <div class="work-media"><img src="img/photos/team-on-site.jpg" alt="The Odans team at the completed Africa Petroleum service station" loading="lazy" data-parallax></div>
+                        <div class="work-meta"><h3>Africa Petroleum service station</h3><span class="work-idx">P-01</span><span class="tag">Fuel station</span></div>
                     </a>
-                    <a class="card reveal" href="projects.html">
-                        <div class="card-media"><img src="img/photos/steel-structure.jpg" alt="Steel portal frame under construction" loading="lazy"></div>
-                        <div class="card-body">
-                            <span class="tag">Steel works</span>
-                            <h3><span class="ph">[Steel project name]</span></h3>
-                            <p><span class="ph">[Town, Region]</span> &middot; <span class="ph">[Year]</span></p>
-                        </div>
+                    <a class="work-item reveal reveal--clip" href="projects.html">
+                        <div class="work-media"><img src="img/photos/steel-structure.jpg" alt="Steel portal frame under construction, with a worker on the beams" loading="lazy" data-parallax></div>
+                        <div class="work-meta"><h3>Structural steel frame</h3><span class="work-idx">P-02</span><span class="tag">Steel works</span></div>
                     </a>
-                    <a class="card reveal" href="projects.html">
-                        <div class="card-media"><img src="img/photos/townhouse.jpg" alt="Modern two-storey townhouse" loading="lazy"></div>
-                        <div class="card-body">
-                            <span class="tag">General construction</span>
-                            <h3><span class="ph">[Residential project name]</span></h3>
-                            <p><span class="ph">[Town, Region]</span> &middot; <span class="ph">[Year]</span></p>
-                        </div>
+                    <a class="work-item reveal reveal--clip" href="projects.html">
+                        <div class="work-media"><img src="img/photos/townhouse.jpg" alt="Modern two-storey townhouse with a timber-clad facade" loading="lazy" data-parallax></div>
+                        <div class="work-meta"><h3>Contemporary townhouse</h3><span class="work-idx">P-03</span><span class="tag">General construction</span></div>
                     </a>
                 </div>
-                <p class="mt-lg reveal"><a class="text-link" href="projects.html">See all projects <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
             </div>
         </section>
 
-        <section class="section section--soft" aria-labelledby="clients-title">
-            <div class="container">
-                <div class="section-head section-head--center reveal">
-                    <span class="eyebrow">Our clients</span>
-                    <h2 id="clients-title">Trusted by leading brands</h2>
+        <section class="section section--soft clients-band" aria-labelledby="clients-title">
+            <div class="container container--wide">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><span class="sheet">C-601</span>Our clients</span>
+                    <h2 id="clients-title" data-split>Trusted by leading brands.</h2>
                     <p>From national oil marketing companies to manufacturers and utilities, our clients count on us to deliver.</p>
                 </div>
-                <ul class="clients reveal" role="list">
+            </div>
+            <div class="marquee reveal">
+                <ul class="marquee-track" role="list">
                     <li><img src="img/clients/goil.png" alt="GOIL" loading="lazy"></li>
                     <li><img src="img/clients/ap.png" alt="Africa Petroleum (AP)" loading="lazy"></li>
                     <li><img src="img/clients/santol.png" alt="Santol Energy" loading="lazy"></li>
@@ -283,17 +356,27 @@
                     <li><img src="img/clients/allstar.png" alt="All-Star Engineering GH" loading="lazy"></li>
                     <li><img src="img/clients/mocka.png" alt="Mocka Living" loading="lazy"></li>
                 </ul>
+                <ul class="marquee-track" role="list" aria-hidden="true">
+                    <li><img src="img/clients/goil.png" alt="" loading="lazy"></li>
+                    <li><img src="img/clients/ap.png" alt="" loading="lazy"></li>
+                    <li><img src="img/clients/santol.png" alt="" loading="lazy"></li>
+                    <li><img src="img/clients/ecg.png" alt="" loading="lazy"></li>
+                    <li><img src="img/clients/promasidor.png" alt="" loading="lazy"></li>
+                    <li><img src="img/clients/gb-foods.png" alt="" loading="lazy"></li>
+                    <li><img src="img/clients/spring-agro.png" alt="" loading="lazy"></li>
+                    <li><img src="img/clients/allstar.png" alt="" loading="lazy"></li>
+                    <li><img src="img/clients/mocka.png" alt="" loading="lazy"></li>
+                </ul>
             </div>
         </section>
 
-        <section class="cta">
-            <div class="container">
-                <div class="cta-box reveal">
-                    <div>
-                        <h2>Have a project in mind?</h2>
-                        <p>We manage every detail of your construction project, from the initial sketch to the finishing touches. Tell us what you need and we'll prepare an estimate.</p>
-                    </div>
-                    <a class="btn btn--light" href="contact.html">Get an estimate <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <section class="cta-xl" aria-labelledby="cta-title">
+            <div class="container container--wide">
+                <span class="eyebrow reveal"><span class="sheet">C-701</span>Start a project</span>
+                <h2 class="cta-title" id="cta-title" data-split>Have a project in mind? <span class="outline">Let's build it.</span></h2>
+                <div class="cta-row reveal">
+                    <p>We manage every detail of your construction project, from the initial sketch to the finishing touches. Tell us what you need and we'll prepare an estimate.</p>
+                    <a class="btn btn--light btn--lg" href="contact.html">Get an estimate <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
                 </div>
             </div>
         </section>
