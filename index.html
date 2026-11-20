@@ -72,8 +72,9 @@
     <main id="main">
         <section class="hero">
             <div class="hero-media" aria-hidden="true">
-                <video autoplay muted loop playsinline poster="img/photos/city-poster.jpg">
-                    <source src="video/city.mp4" type="video/mp4">
+                <!-- Source is attached by main.js on screens 720px+ only, so phones never download the video -->
+                <video muted loop playsinline preload="none" poster="img/photos/city-poster.jpg">
+                    <source data-src="video/city.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="hero-overlay" aria-hidden="true"></div>
@@ -91,6 +92,26 @@
                         <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Structural steel fabrication</li>
                         <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Skilled in-house technical team</li>
                     </ul>
+
+                    <!-- Phone-only hero extras (hidden from 720px up) -->
+                    <div class="hero-mobile">
+                        <figure class="hero-photo">
+                            <picture>
+                                <source media="(min-width: 720px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                                <img src="img/photos/team-on-site-mobile.jpg" alt="The Odans team in hard hats and safety vests at a completed Africa Petroleum fuel station" width="900" height="600">
+                            </picture>
+                            <figcaption class="hero-photo-badge"><strong>9+</strong><span>Years building<br>in Ghana</span></figcaption>
+                        </figure>
+                        <div class="hero-trust">
+                            <span class="hero-trust-label">Trusted by</span>
+                            <ul role="list">
+                                <li><img src="img/clients/goil.png" alt="GOIL" loading="lazy"></li>
+                                <li><img src="img/clients/ap.png" alt="Africa Petroleum" loading="lazy"></li>
+                                <li><img src="img/clients/ecg.png" alt="Electricity Company of Ghana" loading="lazy"></li>
+                                <li><img src="img/clients/santol.png" alt="Santol Energy" loading="lazy"></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

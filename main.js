@@ -37,25 +37,31 @@
         if (e.matches) setMenu(false);
     });
 
-    /* Hero video: slow it down. If the browser won't autoplay it (iPhone Low
-       Power Mode, data saver) or the visitor prefers reduced motion, hide the
-       video and let the still frame behind it show instead. */
+    /* Hero video (720px+ only; phones get a photo hero and never download it).
+       If the browser won't autoplay it (iPhone Low Power Mode, data saver) or
+       the visitor prefers reduced motion, the still frame behind it shows. */
     var video = document.querySelector(".hero-media video");
     if (video) {
+        var wide = window.matchMedia("(min-width: 720px)");
         var useStill = function () {
             video.pause();
             video.parentElement.classList.add("no-video");
         };
-        if (reduceMotion) {
-            video.removeAttribute("autoplay");
-            useStill();
-        } else {
+        var startVideo = function () {
+            var source = video.querySelector("source[data-src]");
+            if (!source || reduceMotion || !wide.matches) return;
+            source.src = source.dataset.src;
+            source.removeAttribute("data-src");
             video.muted = true; // iOS checks the property, not just the attribute
+            video.load();
             video.defaultPlaybackRate = 0.6;
             video.playbackRate = 0.6;
             var attempt = video.play();
             if (attempt && typeof attempt.catch === "function") attempt.catch(useStill);
-        }
+        };
+        if (reduceMotion) useStill();
+        startVideo();
+        wide.addEventListener("change", startVideo);
     }
 
     /* Reveal-on-scroll */
